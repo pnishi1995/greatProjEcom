@@ -1,0 +1,57 @@
+.topBar {
+  background-color: rgb(95, 87, 87);
+  color: white;
+}
+.topBar-Options {
+  font-size: small;
+  padding: 10px;
+}
+.myLogo {
+  width: 30%;
+  padding: 5px 0px 0px 40px;
+}
+
+.userProfile {
+  display: inline-block;
+  text-transform: uppercase;
+  padding: 10px;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 30px;
+  font-weight: 600;
+  color: white;
+  letter-spacing: 2px;
+}
+
+.searchBar {
+  padding: 10px 0px 10px 0px;
+  overflow: hidden;
+
+  .search-input {
+    width: 400px;
+    padding: 10px 0px 7px 0px;
+  }
+  .search-btn {
+    padding: 5px 2px 5px 2px;
+    width: 80px;
+    background-color: #dc1410;
+    color: white;
+    .fa-search {
+      padding: 5px;
+      font-size: 20px;
+    }
+  }
+
+  .search-bar-icons {
+    padding-right: 40px;
+    .fa {
+      padding: 5px;
+      font-size: 25px;
+    }
+    .fa-delicious {
+      color: #dc1410;
+    }
+  }
+}

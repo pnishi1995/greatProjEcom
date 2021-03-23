@@ -1,0 +1,71 @@
+<div class="body">
+    <div class="row container ">
+        <div class="cart-items col-sm-8 ">
+            <div class="number-of-item-in-cart">My Cart (number)</div>
+            <div class="cart-details row">
+                <div class="itemdetail"> Item detail </div>
+                <div class="item-quantity"> Quantity</div>
+                <div class="item-amount">Amount</div>
+            </div>
+            <div class="item-detail-summery row" *ngFor="let item of this._commonService.cart;let i = index;">
+                <div>
+                    <img class="item-pic" src="{{item.image_url}}" alt="">
+                </div>
+                <div class="item-name-amount">
+                    {{item.name}}
+                    <p>Price :{{item.price}}</p>
+                </div>
+                <div class="add-remove-quantity">
+                    <span class="removeOrAdd" (click)="udpateCartItemQuantity(i,'sub')">-</span>
+                    <span class="removeOrAdd">{{item.quantity}}</span>
+                    <span class="removeOrAdd" (click)="udpateCartItemQuantity(i,'add')">+</span>
+                    <div (click)="removeItem(i)"> Remove Item</div>
+                </div>
+                <div class="price-of-item">
+                    <div class="amount">Amount :Rs {{item.price}}</div>
+                    <div class="discount">
+                        Quantity you selected : {{item.quantity}}
+                    </div>
+                </div>
+            </div>
+            <div class="order-or-shop">
+                <button class="continue-shopping" [routerLink]="['/home']">
+                    Continue shopping
+                </button>
+                <button class="place-order" [routerLink]="['/checkout']">
+                    Place Order
+                </button>
+            </div>
+        </div>
+
+        <div class="payment-summery col-sm-4">
+
+            <div class="payment-summery-title">
+                <h5>
+                    Payment Summary
+                </h5>
+                Your shopping cart contains {{this._commonService.cart.length}} Product.
+            </div>
+
+            <div class="total-amount">
+                <span>
+                    Total Amount
+                </span>
+                <span>
+                    Rs : {{totalPrice}} /-
+                </span>
+            </div>
+
+            <div class="amount-payable">
+                <span>
+                    Amount Payable
+                </span>
+                <span>
+                    Rs : {{totalPrice}} /-
+                </span>
+            </div>
+
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,74 @@
+@import url("https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+@import "~ngx-toastr/toastr.css";
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+// bootstrap style toast
+// or import a bootstrap 4 alert styled design (SASS ONLY)
+// should be after your bootstrap imports, it uses bs4 variables, mixins, functions
+// @import "~ngx-toastr/toastr-bs4-alert";
+
+// // if you'd like to use it without importing all of bootstrap it requires
+// @import "~bootstrap/scss/functions";
+// @import "~bootstrap/scss/variables";
+// @import "~bootstrap/scss/mixins";
+// @import "~ngx-toastr/toastr-bs4-alert";
+
+.owl-prev,
+.owl-next {
+  z-index: 9;
+  position: absolute;
+  top: 150px;
+  height: 30px;
+  width: 50px;
+  display: inline-block;
+}
+.owl-prev {
+  left: -32px;
+}
+.owl-next {
+  right: -32px;
+}
+#homeCarausel .owl-theme .owl-nav [class*="owl-"] {
+  display: none;
+}
+
+.advertising-Image:hover {
+  #homeCarausel .owl-theme .owl-nav [class*="owl-"] {
+    display: inline-block;
+    background: transparent;
+    color: white;
+  }
+}
+
+.owl-theme .owl-nav .disabled {
+  display: none;
+}
+.owl-theme .owl-nav [class*="owl-"] {
+  background: transparent;
+  color: black;
+}
+
+// .products-box:hover {
+// }
+.owl-theme .owl-nav [class*="owl-"] {
+  background: #d8d5d5;
+  color: rgb(92, 92, 92);
+  box-shadow: 0px 2px 8px #dedede;
+  transition-duration: 500ms;
+}
+.products-container {
+  .owl-carousel.owl-drag .owl-item {
+    width: 174px !important;
+  }
+}
+
+.toast-container {
+  & > div {
+    opacity: 1 !important;
+  }
+}
+
+* {
+  &:focus {
+    outline: none !important;
+  }
+}
