@@ -17,7 +17,7 @@ export class HeaderComponent {
     const beta = Math.floor(Math.random() * 255) + 1;
     const gama = Math.floor(Math.random() * 255) + 1;
     this.color = 'rgb(' + alpha + ',' + beta + ',' + gama + ')';
-    console.clear();
+    // console.clear();
   }
   logout(){
   this._dataService.post(this._commonService.commonUrl+'/logout','').subscribe((res)=>{

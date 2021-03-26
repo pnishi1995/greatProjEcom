@@ -11,7 +11,7 @@ export class HomeService {
 
   getCategoryProducts() {
     return this._dataService.get(
-      this._commonService.commonUrl + 'home'
+      this._commonService.commonUrl + 'products'
     );
   }
   getCategorylist() {

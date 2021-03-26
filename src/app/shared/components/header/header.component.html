@@ -14,18 +14,17 @@
         </div>
     </div>
 
-
+<mat-toolbar-row>
     <div class="row searchBar">
 
-        <div class="col-sm-3"><img [routerLink]="['/home']" class="myLogo"
+        <div class="col-sm-7"><img [routerLink]="['/home']" class="myLogo"
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMmOBhWbcMi8BAp3Dde0UcDpWmufSXEzlz3A&usqp=CAU" alt="">
             
             </div>
 
-        <div class="col-sm-5"><input placeholder="I am Looking for...." class="search-input" type="text"><button
-                class="search-btn"><i class="fa fa-search" aria-hidden="true"></i></button></div>
-
-        <div class="col-sm-4">
+        <div class="col-sm-5">
+        <mat-button-toggle-group appearance="legacy" name="fontStyle" aria-label="Font Style">
+          <mat-button-toggle value="bold">
             <span class="search-bar-icons" [routerLink]="['/cart']">
                 <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                 <span *ngIf="_commonService?.cart?.length !== 0">
@@ -34,7 +33,8 @@
 
                 Cart
             </span>
-            
+          </mat-button-toggle>
+          <mat-button-toggle value="italic">
             <span class="search-bar-icons" [routerLink]="['/singin']">
                 <span *ngIf="!_commonService?.user">
                     <i class="fa fa-user-plus" aria-hidden="true"></i>
@@ -55,7 +55,28 @@
                         (click)="logout()">logout</span>
                 </span>
             </span>
+          </mat-button-toggle>
+          <mat-button-toggle value="underline">
+            <div class="example-button-container">
+                <button mat-fab color="accent" aria-label="Example icon button with a bookmark icon">
+                  <mat-icon>❤</mat-icon>
+                </button>
+            </div>
+            
+          </mat-button-toggle>
+        </mat-button-toggle-group>
+    
+
+        <!-- <div class="col-sm-5"><input placeholder="I am Looking for...." class="search-input" type="text"><button
+                class="search-btn"><i class="fa fa-search" aria-hidden="true"></i></button></div> -->
+
+        
+            
+
+            
+            
         </div>
 
     </div>
+</mat-toolbar-row>
 </div>

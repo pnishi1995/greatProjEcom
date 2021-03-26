@@ -131,6 +131,8 @@
         height: 300px;
         text-align: center;
         margin: 15px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
 
         .product-image {
           margin: 0px auto;

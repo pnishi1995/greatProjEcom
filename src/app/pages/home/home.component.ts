@@ -23,7 +23,7 @@ export class HomeComponent {
     },
   };
   @ViewChild('homeCrowsel', { static: true }) homeCrowsel;
-  moglixHomePageData: any;
+  homePageData: any;
   categories: Array<any>;
   advertisers: Array<any>;
   flayersImages: Array<any>;
@@ -80,10 +80,10 @@ export class HomeComponent {
         items: 1,
       },
       740: {
-        items: 6,
+        items: 7,
       },
       940: {
-        items: 6,
+        items: 7,
       },
     },
     nav: true,
@@ -101,41 +101,42 @@ export class HomeComponent {
   }
 
   ngOnInit() {
-    this.getHomePageData();
+    this.getCategoryData()
   }
 
-  getHomePageData() {
-    this._commonService.showLoader();
-    const combined = forkJoin(
-      // this._homeService.getCategorylist(),
-      this._homeService.getCategoryProducts()
-    );
-    console.log(this._homeService.getCategoryProducts());
-    combined.subscribe((latestValues) => {
-      // const [res, data] = latestValues;
-      // this.categoriesRawlist = res['data'];
+  // getHomePageData() {
+  //   this._commonService.showLoader();
+  //   const combined = forkJoin(
+  //     this._homeService.getCategorylist(),
+  //     this._homeService.getCategoryProducts()
+  //   );
+  //   console.log(this._homeService.getCategoryProducts());
+  //   combined.subscribe((latestValues) => {
+  //     const [res, data] = latestValues;
+  //     this.categoriesRawlist = res['data'];
 
-      // this.moglixHomePageData = data;
-      this.categories = this.moglixHomePageData.data.category_data;
-      this.advertisers = this.moglixHomePageData.data.banner_data.advertisement;
-      this.flayersImages = this.moglixHomePageData.data.banner_data.flyer;
-      this._commonService.hideLoader();
-    });
-  }
+  //     this.moglixHomePageData = data;
+  //     this.categories = this.moglixHomePageData.data.category_data;
+  //     this.advertisers = this.moglixHomePageData.data.banner_data.advertisement;
+  //     this.flayersImages = this.moglixHomePageData.data.banner_data.flyer;
+  //     this._commonService.hideLoader();
+  //   });
+  // }
 
-  getCategoryProducts() {
-    this._homeService.getCategorylist().subscribe((res) => {
-      this.categorieslistData = res;
-      this.categoriesRawlist = this.categorieslistData.data;
-    });
-  }
+  // getCategoryProducts() {
+  //   this._homeService.getCategorylist().subscribe((res) => {
+  //     this.categorieslistData = res;
+  //     this.categoriesRawlist = this.categorieslistData.data;
+  //   });
+  // }
 
   getCategoryData() {
     this._homeService.getCategoryProducts().subscribe((res) => {
-      this.moglixHomePageData = res;
-      this.categories = this.moglixHomePageData.data.category_data;
-      this.advertisers = this.moglixHomePageData.data.banner_data.advertisement;
-      this.flayersImages = this.moglixHomePageData.data.banner_data.flyer;
+      this.homePageData = res;
+      console.log( this.homePageData);
+      // this.categories = this.moglixHomePageData.data.category_data;
+      // this.advertisers = this.moglixHomePageData.data.banner_data.advertisement;
+      // this.flayersImages = this.moglixHomePageData.data.banner_data.flyer;
     });
   }
 
